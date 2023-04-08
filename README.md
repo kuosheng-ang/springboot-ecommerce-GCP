@@ -36,7 +36,7 @@ Features
 - Customer Profile Management
   - Shipping Address
   
-  ![customer shipping address management (ie: edit / delete )](G:\springtutorials\cmsshoppingcart\screenshots\customer_shipping_address.PNG "customer shipping address")
+  ![customer shipping address management (ie: edit / delete )](/screenshots/customer_shipping_address.PNG "customer shipping address")
 
   - Order History
   - Account Management
