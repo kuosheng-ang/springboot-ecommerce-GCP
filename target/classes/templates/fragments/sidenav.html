@@ -1,0 +1,42 @@
+<nav class="sidebarWrapper" th:fragment="profileSidenav">
+
+    <div class="sidebarFrame">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>User Profile</h3>
+            </div>
+
+            <ul class="sidebar-components">
+
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-styled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Shipping Address</a>
+                        </li>
+                        <li>
+                            <a href="#">Mailing Subscription</a>
+                        </li>
+                    </ul>
+
+                <div>
+                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Order History</a>
+                    <ul class="collapse list-styled" id="homeSubmenu1">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div>
+                    <a href="#">Contact</a>
+                </div>
+            </ul>
+        </nav>
+
+    </div>
+
+</nav>

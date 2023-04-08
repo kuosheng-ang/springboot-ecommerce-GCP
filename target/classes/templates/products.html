@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" >
+<head th:replace="/fragments/head :: common-header"></head>
+<body>
+    <section>
+        <nav th:replace="/fragments/nav :: nav-front"></nav>
+        <!--<nav th:replace="/fragments/nav :: nav-front"></nav>-->
+        <div class="container-fluid mt-auto">
+            <div class="row" style="margin-left: -10em; padding-top: 12em" >
+                <div th:replace="/fragments/categories :: categories"></div>
+                <div class="col" style="margin-left: 10em">
+                    <div class="col"></div>
+                    <div class="col">
+                        <!--<h2 class="display-3 mb-5" th:text="${categoryName} ?: 'All products'"></h2>-->
+                        <div th:fragment="products">
+                            <div class="row">
+                            <div class="col-6"  style="padding-top: 3em" th:each="product: ${products}">
+
+                                <p>
+                                    <img style="width:200px; height:250px; border-width: 2rem;" th:src="@{'/media/' + ${product.productImage}}">
+                                </p>
+                                <h4 style="font-size:16px;text-align:justify" class="title" th:text="${product.namedTitle}"></h4>
+                                <h2 style="font-size:12px" th:text="${product.inStockNumber}"></h2>
+
+                                <p th:text="'$' + ${product.price}"></p>
+                                <div style="position: relative;">
+                                    <p>
+                                        <a class="btn btn-primary addToCart" th:attr="data-id=${product.id}" th:href="@{'/cart/add/' + ${product.id}}">Add to cart</a>
+                                        <img class="ajaxLoader d-none" src="/images/ajax-loader.gif">
+                                    </p>
+
+                                </div>
+                            </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+
+    <div th:replace="/fragments/head :: body-bottom-scripts" /></div>
+
+    <!-- <script>
+         $("a.addToCart").click(function(e) {
+             e.preventDefault();
+             let $this = $(this);
+             $this.next().removeClass('d-none');
+             let id = $this.attr('data-id');
+             let url = "/cart/add/" + id;
+             $.get(url, function(data) {
+                 console.log(data);
+                 $('div.cart').html(data);
+
+             }).done(function() {
+                 $this.parent().parent().find('div.productAdded').fadeIn();
+                 $this.next().addClass('d-none');
+                 setTimeout(() => {
+                     $this.parent().parent().find('div.productAdded').fadeOut();
+                 }, 100);
+             });
+         });
+     </script>-->
+    </section>
+</body>
+
+</html>

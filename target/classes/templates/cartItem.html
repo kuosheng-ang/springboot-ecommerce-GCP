@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="/fragments/head :: common-header"></head>
+<body>
+   <section>
+       <nav th:replace="/fragments/nav :: nav-user"></nav>
+        <div class="container-fluid mt-auto">
+            <div class="row" style="padding-top: 10em">
+                <div th:replace="/fragments/categories :: categories"></div>
+                <!--<div th:replace="/fragments/sidenav :: profileSidenav"></div>-->
+                    <div class="col" style="margin-left: 20em; margin-top: 30em">
+                        <div class="col"></div>
+                        <div class="col">
+
+                                <div class="overlay text-center d-none">
+                                    <h4 class="display-4">You are being redirected to paypal...</h4>
+                                </div>
+                                <h2 class="title" style="margin-left:8rem; color: white; margin-top: -45em">Cart Overview</h2>
+                                <table class="table" style="margin-left:6rem; color: white; width: 50em">
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Image</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Total</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr th:each="el: ${cart}">
+
+                                        <td id="cartProductTitle" style="width: 15em" th:text="${el.value.productTitle}"></td>
+                                        <td>
+                                            <img style="width: 70px;" th:src="@{'/media/' + ${el.value.cartImage}}" alt="">
+                                        </td>
+                                        <td>
+                                            <span id="cartProductQuantity"  th:text="${el.value.cartQuantity}" style="width: 70px" ></span>
+                                            <a th:href="@{'/cart/add/' + ${el.value.productId}}"
+                                                class="btn btn-success btn-sm">+</a>
+                                            <a th:href="@{'/cart/subtract/' + ${el.value.productId}}" class="btn btn-primary btn-sm">-</a>
+
+                                        </td>
+                                        <td id="cartPrice" th:text="'$' + ${el.value.cartPrice}"></td>
+                                        <td th:with="formattedTotal=${el.value.cartPrice} * ${el.value.cartQuantity}"
+                                            th:text="'$' + ${#numbers.formatDecimal(formattedTotal, 0, 'COMMA', 2, 'POINT')}">
+                                        </td>
+                                        <td>
+                                            <a th:href="@{'/cart/remove/' + ${el.value.productId}}" class="btn btn-danger btn-sm">Remove</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="4" class="text-right"><b>Grand Total</b></td>
+                                        <td colspan="1" th:text="'$' + ${#numbers.formatDecimal(ctotal, 0, 'COMMA', 2, 'POINT')}"></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            <a href="/shoppingCart/clear/" class="btn btn-danger">Clear Cart</a>
+                                        </td>
+                                        <td></td>
+                                        <td colspan="4" style="text-align:right;">
+                                            <div id="paypal-button-container"  class="btn btn-success checkout">Checkout</div>
+                                            <!--<a href="#" class="btn btn-success checkout">Checkout</a>-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paypaldiv">
+                <form id="paypalform" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                   <input type="hidden" name="cmd" value="_cart">
+                   <input type="hidden" name="upload" value="1">
+                    <input type="hidden" name="business" value="seller@cmsshoppingcart.com">
+                    <input TYPE="hidden" NAME="currency_code" value="USD">
+
+                   <th:block th:each="el, iter : ${cart}">
+                       <input type="hidden" th:name="'item_name_' + ${iter.count}" th:value="${el.value.productTitle}">
+                       <input type="hidden" th:name="'amount_' + ${iter.count}" th:value="${el.value.cartPrice}">
+                       <input type="hidden" th:name="'quantity_' + ${iter.count}" th:value="${el.value.cartQuantity}">
+
+                       <input type="hidden" name="currency_code" value="USD">
+                       <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" name="submit"
+                           alt="Make payments with PayPal - it's fast, free and secure!">
+                   </th:block>
+                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+               </form>
+            </div>
+            <div th:replace="/fragments/head :: body-bottom-scripts" /></div>
+
+
+            <script>
+              $(function () {
+                  $("div.checkout").click(function (e) {
+                      e.preventDefault();
+                      $("div.overlay").removeClass("d-none");
+                      $.get("/cart/clear", {}, function () { });
+                      $("form#paypalform").submit();
+                  });
+              });
+            </script>
+            <script src="https://www.paypal.com/sdk/js?client-id=ASgQ2V7ZYl5-KSVkKyv5EyKjeUUSZoEtofA6Ck2xNZjR1g7Bx6yAikF4iB9WjsKvrZJy5fp40l73USki&currency=USD"></script>
+           <script>
+               paypal.Buttons({
+                   createOrder: function(data, actions) {
+
+                       return actions.order.create({
+                           purchase_units: [{
+                               amount: {
+                                   value: document.getElementById("cartPrice").value
+                               },
+                               quantity: {
+                                   value: document.getElementById("cartProductQuantity").value
+                               },
+                               item:{
+                                   value: document.getElementById("cartProductTitle").value
+                               }
+
+                           }]
+                       });
+                   }
+               }).render('#paypal-button-container');
+           </script>
+
+
+            <!--<script>
+                paypal.Buttons({
+               // Order is created on the server and the order id is returned
+               createOrder: function() {
+                   return fetch("/create-paypal-order", {
+                       method: "POST",
+                       headers: {
+                           "Content-Type": "application/json",
+                       },
+                       // use the "body" param to optionally pass additional order information
+                       // like product skus and quantities
+                       body: JSON.stringify({
+                           cart: [
+                               {
+                                   sku: "YOUR_PRODUCT_STOCK_KEEPING_UNIT",
+                                   quantity: "YOUR_PRODUCT_QUANTITY",
+                               },
+                           ],
+                       }),
+                   })
+                       .then((response) => response.json())
+                       .then((order) => order.id);
+               },
+               // Finalize the transaction on the server after payer approval
+               onApprove(data) {
+                   return fetch("/my-server/capture-paypal-order", {
+                       method: "POST",
+                       headers: {
+                           "Content-Type": "application/json",
+                       },
+                       body: JSON.stringify({
+                           orderID: data.orderID
+                       })
+                   })
+                       .then((response) => response.json())
+                       .then((orderData) => {
+                           // Successful capture! For dev/demo purposes:
+                           console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                           const transaction = orderData.purchase_units[0].payments.captures[0];
+                           alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                           // When ready to go live, remove the alert and show a success message within this page. For example:
+                           // const element = document.getElementById('paypal-button-container');
+                           // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                           // Or go to another URL:  window.location.href = 'thank_you.html';
+                       });
+               }
+           }).render('#paypal-button-container');
+       </script>-->
+
+            <!--<script>
+           $(document).ready(function () {
+            var paymentForm = paypal.Buttons({
+                 // Sets up the transaction when a payment button is clicked
+                   createOrder: function() => {
+                   return fetch('/orders/create', {
+                     method : "POST",
+                     headers: { "Content-Type" : 'application/json' },
+                     body : JSON/stringify({
+                           "intent": "CAPTURE",
+                           "purchase_units": [
+                               {
+                                   "items": [
+                                       {
+                                           "name": "T-Shirt",
+                                           "description": "Green XL",
+                                           "quantity": "1",
+                                           "unit_amount": {
+                                               "currency_code": "SGD",
+                                               "value": "100.00"
+                                           }
+                                       }
+                                   ],
+                                   "amount": {
+                                       "currency_code": "USD",
+                                       "value": "100.00",
+                                       "breakdown": {
+                                           "item_total": {
+                                               "currency_code": "USD",
+                                               "value": "100.00"
+                                           }
+                                       }
+                                   }
+                               }
+                           ],
+                           "application_context": {
+                               "return_url": "http://localhost:8082/order/return",
+                               "cancel_url": "http://localhost:8082/order/cancel"
+                           }
+
+                   }).then (res => {
+                    if (res.ok) return res.json()
+                    return res.json().then(json => Promise.reject(json))
+                    }).then((order) => order.id)
+                    .catch (e=> {
+                       console.error(e.error)
+                    }),
+
+                   onApprove: (data, actions) => {
+                       $('button.payment-info-next-step-button').trigger("click");
+                       return fetch(`/api/orders/${data.orderID}/capture`, {
+                           method: "post",
+                       })
+                           .then((response) => response.json())
+                           .then((orderData) => {
+
+                               console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                               const transaction = orderData.purchase_units[0].payments.captures[0];
+                               alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                               const element = document.getElementById('paypal-button-container');
+                               element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                               actions.redirect('thank_you.html');
+                           });
+                       if (paymentForm) {
+                           paymentForm.render('#paypal-button-container')
+                       };
+
+                   );
+              </script>-->
+
+    </section>
+</body>
+
+
+</html>

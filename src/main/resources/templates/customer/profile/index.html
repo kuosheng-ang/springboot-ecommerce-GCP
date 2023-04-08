@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="/fragments/head :: common-header"></head>
+<body>
+    <section>
+        <nav th:replace="/fragments/nav :: nav-user"></nav>
+        <div class="container" style="margin-left:-5rem; margin-top: 10em">
+            <div class="row" style="margin-top: 20em">
+                <div th:replace="/fragments/sidenav :: profileSidenav"></div>
+                <div class="col" style="margin-left: 10em; margin-top: 40em">
+                    <div class="col"></div>
+                    <div class="col">
+                        <div class="row">
+
+                            <div th:replace="/customer/profile/profile :: profileForm"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="/fragments/head :: body-bottom-scripts" /></div>
+    </section>
+</body>
+<footer>
+    &copy; Clement Ang
+</footer>
+</html>
+

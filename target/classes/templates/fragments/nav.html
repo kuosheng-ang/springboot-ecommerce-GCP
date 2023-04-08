@@ -1,0 +1,188 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body>
+<nav class="navbar navbar-expand-sm" th:fragment="nav-front" >
+    <!-- Navbar -->
+    <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        Container wrapper
+        <div class="container">-->
+    <div class="container-fluid primary-navigation">
+
+        <a sec:authorize="isAnonymous()" class="navbar text-white letter-spacing-2 " th:href="@{/login}">E-commerce Shopping</a>
+
+        <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active" th:each="page : ${cpages}" th:if="${page.slug != 'home'}">
+                    <a th:if="${page.slug != 'home'}" class="nav-link" th:href="@{'/' + ${page.slug}}"
+                        th:text="${page.title}">Home <span class="sr-only"></span></a>
+                </li>
+            </ul>-->
+
+
+           <!-- <ul class="nav navbar-nav navbar-left ff-sans-normal uppercase text-white letter-spacing-1">
+                <li class="active"><a th:href="@{/bookshelf}"
+                                        class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-haspopup="true" aria-expanded="false"><span
+                        class="glyphicon glyphicon-list-alt ff-sans-normal uppercase text-white letter-spacing-2"></span> BOOKS <span
+                        class="
+                        caret ff-sans-normal uppercase text-white letter-spacing-2"></span></a>-->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-1"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-white letter-spacing-2" id="navbar-list-1">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a  class="nav-link dropdown-toggle text-white letter-spacing-2" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Browse All Categories
+                    </a>
+                    <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" >
+                        <!--<a class="list-group-item" th:each="category: ${ccategories}" >
+                            <a class="dropdown-item" th:href="@{'/category/' + ${category.slug}}" th:text="${category.name}"></a>
+                        </a>-->
+                        <a class="dropdown-item" th:each="category: ${ccategories}"
+                             th:href="@{'/category/' + ${category.slug}}" th:text="${category.name}">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <li class="nav-item text-white letter-spacing-2 navbar-left ">
+            <!--<li class="active"><a class="ff-sans-normal uppercase text-white letter-spacing-2"-->
+        <li><a class="nav-link text-white letter-spacing-2"
+               th:href="@{/register}">Register
+        </a></li>
+        <a sec:authorize="isAnonymous()" class="nav-link text-white letter-spacing-2"
+           th:href="@{/login}">Login
+        </a></li>
+        </li>
+
+        <li  class="nav-item text-white letter-spacing-2 ps-4 navbar-right">
+
+            <a sec:authorize="isAuthenticated()" class="nav-link text-white letter-spacing-2" th:href="@{/cart/view}"><i class="fa fa-shopping-cart"></i>
+                SHOPPING CART</a></li>
+
+            <a sec:authorize="isAuthenticated()" class="nav-link text-white letter-spacing-2 " th:href="@{/customer/profile}"><i class="fa fa-user"></i>
+                MY ACCOUNT</a></li>
+
+            <a sec:authorize="isAuthenticated()" class="nav-link text-white letter-spacing-2" th:href="@{/logout}"><i class="fa fa-user-circle-o"></i>
+                LOGOUT</a></li>
+
+        </li>
+            <!--<div sec:authorize="isAuthenticated()">
+                Authenticated as <span sec:authentication="name"></span></div>
+            <form th:if="${principal != null}"  method="post"  th:action="@{/logout}">
+                <span class="text-white" th:text="${'Hi ' + principal}"></span>
+            </form>-->
+
+    </div>
+</nav>
+
+
+    <!--<div class="primary-navigation ">
+        <form class="navbar-right" th:if="${principal != null}" method="post" th:action="@{/logout}">
+            <span class="text-white letter-spacing-2 ps-4" th:text="${'Hi ' + principal}"></span>
+            <button class="btn btn-secondary">Logout</button>
+        </form>
+    </div>-->
+<nav class="navbar navbar-expand-md"  th:fragment="nav-user">
+    <div class="container primary-navigation" >
+
+        <a sec:authorize="isAuthenticated()" class="navbar text-white letter-spacing-2 " th:href="@{/login}">E-commerce Shopping</a>
+
+
+        <li class="nav-item text-white letter-spacing-2 navbar-left ">
+            <!--<li class="active"><a class="ff-sans-normal uppercase text-white letter-spacing-2"-->
+
+
+        </li>
+        <!-- <ul class="nav navbar-nav navbar-left ff-sans-normal uppercase text-white letter-spacing-1">
+             <li class="active"><a th:href="@{/bookshelf}"
+                                     class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                     aria-haspopup="true" aria-expanded="false"><span
+                     class="glyphicon glyphicon-list-alt ff-sans-normal uppercase text-white letter-spacing-2"></span> BOOKS <span
+                     class="
+                     caret ff-sans-normal uppercase text-white letter-spacing-2"></span></a>-->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-white letter-spacing-2" id="navbar-list">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a  class="nav-link dropdown-toggle text-white letter-spacing-2" href="#" id="userNavbarDropdownMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Browse All Categories
+                    </a>
+                    <div class="dropdown-menu"  aria-labelledby="userNavbarDropdownMenu"  >
+                        <!--<a class="list-group-item" th:each="category: ${ccategories}" >
+                            <a class="dropdown-item" th:href="@{'/category/' + ${category.slug}}" th:text="${category.name}"></a>
+                        </a>-->
+                        <a class="dropdown-item" th:each="category: ${ccategories}"
+                           th:href="@{'/category/' + ${category.slug}}" th:text="${category.name}">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <li  class="nav-item text-white letter-spacing-2 ps-4 navbar-right">
+
+            <a class="nav-link text-white letter-spacing-2" th:href="@{/cart/view}"><span class="fa fa-shopping-cart"></span>
+                SHOPPING CART</a></li>
+            <a sec:authorize="isAuthenticated()"  th:href="@{/logout}">
+                <span class="text-white letter-spacing-2 ps-4" th:text= "${authUserName}"></span></a>
+
+        </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-white letter-spacing-2" id="navbar-list-4">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="nav-item dropdown">
+                    <a sec:authorize="isAuthenticated()" class="nav-link dropdown-toggle text-white letter-spacing-2 ps-4" th:href="@{/customer/profile}" data-toggle="dropdown" id="TopNavbarDropdownMenuLink" role="button" aria-haspopup="true"
+                        aria-expanded="false">Account</a>
+                    <div class="dropdown-menu" aria-labelledby="TopNavbarDropdownMenuLink">
+                        <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}"><i class="fa fa-user-circle-o"></i>Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+
+
+
+<nav class="navbar navbar-expand-md" th:fragment="nav-admin">
+    <a class="navbar-brand" th:href="@{/login}" target="_blank">Home Page</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsAdmin"
+        aria-controls="navbarsAdmin" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsAdmin">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/pages">Pages</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/categories">Categories</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/products">Products</a>
+            </li>
+        </ul>
+        <form class="float-right" th:if="${principal != null}" method="post" th:action="@{/logout}">
+            <span class="text-white" th:text="${'Hi ' + principal}"></span>
+            <button class="btn btn-secondary">Logout</button>
+        </form>
+    </div>
+</nav>
+
+</body>
