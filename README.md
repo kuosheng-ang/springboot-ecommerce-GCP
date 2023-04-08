@@ -31,7 +31,7 @@ Features
 - Shopping Cart
   - Payment checkout items listed on shopping cart
  
-    ![shopping cart screenshots to checkout for payment](G:\springtutorials\cmsshoppingcart\screenshots\shopping_cart.PNG "shopping cart screenshots")
+    ![shopping cart screenshots to checkout for payment](/screenshots/shopping_cart.PNG "shopping cart screenshots")
 
 - Customer Profile Management
   - Shipping Address
@@ -41,7 +41,7 @@ Features
   - Order History
   - Account Management
 
-    ![User/Customer profile identity details (ie: phone number, password)](G:\springtutorials\cmsshoppingcart\screenshots\customer_profile.PNG "Customer Profile")
+    ![User/Customer profile identity details (ie: phone number, password)](/screenshots/customer_profile.PNG "Customer Profile")
 
 
 Used Tools
@@ -59,7 +59,7 @@ Database Setup
 ---------------
  - Database configuration setting tested on PostgreSQL version 14
  - Database Configuration in Spring Boot
-   - ![database configuration on spring boot](G:\springtutorials\cmsshoppingcart\screenshots\DataBASE_configuration.PNG "database configuration on spring")
+   - ![database configuration on spring boot](/screenshots/DataBASE_configuration.PNG "database configuration on spring")
 
     
 
