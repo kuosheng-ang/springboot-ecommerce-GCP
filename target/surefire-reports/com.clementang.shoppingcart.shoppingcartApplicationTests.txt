@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.clementang.shoppingcart.shoppingcartApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.869 s - in com.clementang.shoppingcart.shoppingcartApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.132 s - in com.clementang.shoppingcart.shoppingcartApplicationTests
