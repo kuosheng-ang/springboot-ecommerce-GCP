@@ -47,10 +47,9 @@ Features
 Used Tools
 -----------
 - Java 11
-- Spring Boot v2.5.8
-- Maven v3.6.3
+- Spring Boot Framework v2.5.8
 - PostgreSQL Version 14
-- Thymeleaf Spring5 Security (sec:authorize="isAuthenticated()" / "isAnonymous()") / 3.0.12.RELEASE
+- Thymeleaf Spring5 Security (sec:authorize="isAuthenticated()" / "isAnonymous()", "userAuthenticated") / 3.0.12.RELEASE
 - Spring Security and roles
 - Spring Data Jpa
 - Spring Session
