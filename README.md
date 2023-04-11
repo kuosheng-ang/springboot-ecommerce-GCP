@@ -70,6 +70,6 @@ Project Setup
 - Install maven dependencies using IDE auto import or using the command ``mvn install``
 - Run the app using ``mvn spring-boot:start`` from project root directory.
 
-WebSite hosted on GCP - Google Console Platform:
+WebSite hosted on GCP - Google Cloud Platform:
 
 - https://8080-cs-656bed13-8b9b-4e14-a8da-28349f3ac58b.cs-asia-southeast1-ajrg.cloudshell.dev/
