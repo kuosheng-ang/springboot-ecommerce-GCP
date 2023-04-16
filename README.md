@@ -46,7 +46,8 @@ Features
    - Include forms validation checks on the user inputs (ie: phone number should contain numeric values, firstname or lastname should not contain numeric values,     
       password matching, email input should contain @ & dot (ie: xxxx@hotmail.com ) & so forth, to minimize any back-end DB server side or data model validation throw-
       back errors.
-    ![ User Registration (forms validation) features as input control](/screenshots/user-registration.PNG "User Registration")
+      
+    ![ User Registration (forms validation) features as input control](/screenshots/registration_form_validation.PNG "User Registration")
       
     
 
