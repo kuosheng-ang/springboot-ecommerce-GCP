@@ -42,8 +42,9 @@ Features
   - Account Management
 
     ![User/Customer profile identity details (ie: phone number, password)](/screenshots/customer_profile.PNG "Customer Profile")
+    
   - User Registration
-   - Include forms validation checks on the user inputs (ie: phone number should contain numeric values, firstname or lastname should not contain numeric values,     
+    - Include forms validation checks on the user inputs (ie: phone number should contain numeric values, firstname or lastname should not contain numeric values,     
       password matching, email input should contain @ & dot (ie: xxxx@hotmail.com ) & so forth, to minimize any back-end DB server side or data model validation throw-
       back errors.
       
