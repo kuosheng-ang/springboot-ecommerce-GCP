@@ -80,7 +80,7 @@ Project Setup
 
 WebSite hosted on GCP - Google Cloud Platform:
 
- - ![Main Page](/screenshots/mainPage.PNG "Main Page hosted on GCP - Google Cloud Platform")
+  ![Main Page](/screenshots/mainPage.PNG "Main Page hosted on GCP - Google Cloud Platform")
 
 if this link below is showing 404 error, my apologies is that my Google Cloud account has exceeded free tier limited allocated
 
