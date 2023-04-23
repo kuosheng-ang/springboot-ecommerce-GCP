@@ -8,7 +8,7 @@ Features
    
    ![User Roles Database Structure](/screenshots/users_roles_maintenance.PNG "User Roles Database Table")
    
-   ![roles Privilege Database Structure](/screenshots/roles Privilege.PNG "Roles Privilege Table")
+   ![roles Privilege Database Structure](/screenshots/roles_privileges_maintenance.PNG "Roles Privilege Table")
    
  - Shopping Cart that contains products added for checkout before it's translated to transactional order.
  - Upon login/sign-in, app is configured that incorporates Session-based Management authentication server that will create a session for 
