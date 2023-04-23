@@ -6,7 +6,7 @@ Features
  - User Login Page Portal that incorporates IAM (Identity Access Management) that redirects page access for users 
    according to roles, permission and privilege. 
    
-   ![User Roles Database Structure](/screenshots/customer_profile.PNG "User Roles Database Table")
+   ![User Roles Database Structure](/screenshots/users_roles_maintenance.PNG "User Roles Database Table")
  - Shopping Cart that contains products added for checkout before it's translated to transactional order.
  - Upon login/sign-in, app is configured that incorporates Session-based Management authentication server that will create a session for 
    the user after the user logs in. The session id is then stored on a cookie on the user’s browser.
