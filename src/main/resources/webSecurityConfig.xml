@@ -11,7 +11,6 @@
 >
 
 
-
     <http use-expressions="true">
         <!--<intercept-url pattern="/login*" access="permitAll"/>
         <intercept-url pattern="/logout*" access="permitAll"/>
@@ -70,13 +69,6 @@
         </security:authentication-provider>
     </security:authentication-manager>
 
-    <beans:bean id="myAuthenticationSuccessHandler"
-                class="com.clementang.shoppingcart.security.customisedAuthenticationSuccessHandler" />
-
-
-    <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
-        <beans:constructor-arg value="11"/>
-    </beans:bean>
 
 
     <global-method-security pre-post-annotations="enabled"/>
