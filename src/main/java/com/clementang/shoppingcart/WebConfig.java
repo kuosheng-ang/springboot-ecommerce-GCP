@@ -14,9 +14,8 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
-
 import javax.servlet.ServletContext;
-//import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+
 
 
 @EnableAsync
@@ -40,18 +39,8 @@ public class WebConfig  implements WebMvcConfigurer {
     }
 
 
-    /**
-     * Thymeleaf template resolver serving HTML. setTemplateMode("HTML5")is deprecated, instead is assigned using HTML
-     */
-    @Bean
-    @Description("Thymeleaf template resolver serving HTML 5")
-
-    //public ServletContextTemplateResolver templateResolver(ServletContext servletContext) {
-    //public ClassLoaderTemplateResolver templateResolver() {
     public SpringResourceTemplateResolver templateResolver(){
 
-        //ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(servletContext);
-        //ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
 
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setPrefix("file:/G:/springtutorials/cmsshoppingcart/cmsshoppingcart/src/main/resources/templates/");
@@ -62,22 +51,7 @@ public class WebConfig  implements WebMvcConfigurer {
         return templateResolver;
     }
 
-    /*@Bean
-    @Description("Thymeleaf Template Resolver")
-    public ServletContextTemplateResolver templateResolver(ServletContext servletContext) {
-        //ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
-        ServletContextTemplateResolver templateResolver;
-        templateResolver = new ServletContextTemplateResolver(servletContext);
-    *//*public SpringResourceTemplateResolver templateResolver() {
-        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();*//*
 
-        //templateResolver.setPrefix("./cmsshoppingcart/");
-        templateResolver.setSuffix(".html");
-        templateResolver.setTemplateMode("HTML5");
-        //templateResolver.setApplicationContext(applicationContext);
-        *//*templateResolver.setCacheable(true);*//*
-        return templateResolver;
-    }*/
     @Bean
     @Description("Thymeleaf View Resolver")
     public ThymeleafViewResolver viewResolver() {
@@ -95,7 +69,6 @@ public class WebConfig  implements WebMvcConfigurer {
     @Description("Thymeleaf Template Engine")
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        //templateEngine.setEnableSpringELCompiler(true);
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;
     }
