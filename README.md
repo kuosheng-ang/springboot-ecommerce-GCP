@@ -87,6 +87,16 @@ WebSite hosted on GCP - Google Cloud Platform:
 
   ![Main Page](/screenshots/mainPage.PNG "Main Page hosted on GCP - Google Cloud Platform")
 
+
+**AWS Infrastrucure as a code (IaaC) implementation**:
+- Scale my infrastructure worldwide and manage resources across all AWS accounts and regions through a single operation.
+- Extend and manage my infrastructure to include cloud resources published in the CloudFormation Registry, the developer community, and my library.
+- Automate resource management across my organization within the region with AWS service integrations offering turnkey application distribution and governance controls.
+
+  ![AWS CloudFormation](/screenshots/AWS-CloudFormation_Events.PNG "Using AWS CloudFormation script to implement as IaaC")
+
+  ![AWS CloudFormation](/screenshots/AWS-CloudFormation_resources.PNG "Using AWS CloudFormation script to implement as IaaC")
+
 if this link below is showing 404 error, my apologies is that my Google Cloud account has exceeded free tier limited allocated
 
 - https://8080-cs-656bed13-8b9b-4e14-a8da-28349f3ac58b.cs-asia-southeast1-ajrg.cloudshell.dev/?authuser=0&redirectedPreviously=true
