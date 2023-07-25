@@ -88,7 +88,7 @@ WebSite hosted on GCP - Google Cloud Platform:
   ![Main Page](/screenshots/mainPage.PNG "Main Page hosted on GCP - Google Cloud Platform")
 
 
-**AWS Infrastrucure as a code (IaaC) implementation**:
+**AWS Infrastructure as a code (IaaC) implementation**:
 - Scale my infrastructure worldwide and manage resources across all AWS accounts and regions through a single operation.
 - Extend and manage my infrastructure to include cloud resources published in the CloudFormation Registry, the developer community, and my library.
 - Automate resource management across my organization within the region with AWS service integrations offering turnkey application distribution and governance controls.
