@@ -93,6 +93,8 @@ WebSite hosted on GCP - Google Cloud Platform:
 - Extend and manage my infrastructure to include cloud resources published in the CloudFormation Registry, the developer community, and my library.
 - Automate resource management across my organization within the region with AWS service integrations offering turnkey application distribution and governance controls.
 
+- click on the link to download the file ![AWS CloudFormation](/AWSCloudFormation_Deployment%20as%20IaaC.yaml "CloudFormation-IaaC ")  
+
   ![AWS CloudFormation](/screenshots/AWS-CloudFormation_Events.PNG "Using AWS CloudFormation script to implement as IaaC")
 
   ![AWS CloudFormation](/screenshots/AWS-CloudFormation_resources.PNG "Using AWS CloudFormation script to implement as IaaC")
