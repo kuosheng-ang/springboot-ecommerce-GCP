@@ -103,7 +103,7 @@ WebSite hosted on GCP - Google Cloud Platform:
 
   - AWS Architecture to emulate On-Premise Infrastructure Network when using Site-to-Site VPN Connection (ie: Openswan Protocol which offers IPSec capability/features) 
 
-- ![AWS Architecture for Site to Site Connection between On-Premise Network & Public Cloud](/screenshots/AWS Architecture Diagram_Netflix_OnPrem_Site-to-Site VPN.PNG "On-Premise Infrastructure network for S2S VPN Connection to AWS Public Cloud")
+- ![AWS Architecture for Site to Site Connection between On-Premise Network & Public Cloud](/screenshots/AWS Architecture Diagram_Netflix_OnPrem_Site-to-Site VPN.png "On-Premise Infrastructure network for S2S VPN Connection to AWS Public Cloud")
 
 if this link below is showing 404 error, my apologies is that my Google Cloud account has exceeded free tier limited allocated
 
