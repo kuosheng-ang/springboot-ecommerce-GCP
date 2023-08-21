@@ -105,7 +105,7 @@ WebSite hosted on GCP - Google Cloud Platform:
 
 - ![AWS Architecture for Site to Site Connection between On-Premise Network](/screenshots/AWS Architecture Diagram_Netflix_OnPrem_Site-to-Site VPN.png "On-Premise Infrastructure network for S2S VPN Connection to AWS Public Cloud")
   
-  ![AWS Architecture](/screenshots/AWS Architecture Diagram_Netflix_OnPrem_Site-to-Site VPN.png "On-Premise Infrastructure network")
+  ![AWS Architecture](/screenshots/AWS Architecture Diagram_Netflix_OnPrem_Site-to-Site VPN.PNG "On-Premise Infrastructure network")
 
 if this link below is showing 404 error, my apologies is that my Google Cloud account has exceeded free tier limited allocated
 
