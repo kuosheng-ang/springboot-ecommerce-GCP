@@ -101,6 +101,10 @@ WebSite hosted on GCP - Google Cloud Platform:
 
 - AWS Cloudformation can be enhanced by adding ALB, targetGroup, Auto-Scaling to establish AWS Web Infrastructure. Feel free to contact me: kuosheng.ang@outlook.com
 
+  - AWS Architecture to emulate On-Premise Infrastructure Network when using Site-to-Site VPN Connection (ie: Openswan Protocol which offers IPSec capability/features) 
+
+- ![AWS Architecture for Site to Site Connection between On-Premise Network & Public Cloud](/screenshots/AWS Architecture Diagram_Netflix_OnPrem_Site-to-Site VPN.PNG "On-Premise Infrastructure network for S2S VPN Connection to AWS Public Cloud")
+
 if this link below is showing 404 error, my apologies is that my Google Cloud account has exceeded free tier limited allocated
 
 - https://8080-cs-656bed13-8b9b-4e14-a8da-28349f3ac58b.cs-asia-southeast1-ajrg.cloudshell.dev/?authuser=0&redirectedPreviously=true
