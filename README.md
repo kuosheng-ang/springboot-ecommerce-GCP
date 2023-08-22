@@ -103,9 +103,7 @@ WebSite hosted on GCP - Google Cloud Platform:
 
   - AWS Architecture to emulate On-Premise Infrastructure Network when using Site-to-Site VPN Connection (ie: Openswan Protocol which offers IPSec capability/features) 
 
-
-
-  ![AWS Architecture](/screenshots/AWS_Architecture_Diagram_Private-Cloud-On-Premise Network.PNG "On-Premise Infrastructure network")
+  ![AWS Architecture](/screenshots/AWS-Architecture-Diagram-Private-Cloud-On-Premise-Network.PNG "On-Premise Infrastructure network")
 
 if this link below is showing 404 error, my apologies is that my Google Cloud account has exceeded free tier limited allocated
 
