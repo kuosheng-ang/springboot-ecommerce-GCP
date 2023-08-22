@@ -105,7 +105,7 @@ WebSite hosted on GCP - Google Cloud Platform:
 
 
 
-  ![AWS Architecture](/screenshots/AWS Architecture Diagram_Private-Cloud-On-Premise Network.PNG "On-Premise Infrastructure network")
+  ![AWS Architecture](/screenshots/AWS_Architecture_Diagram_Private-Cloud-On-Premise Network.PNG "On-Premise Infrastructure network")
 
 if this link below is showing 404 error, my apologies is that my Google Cloud account has exceeded free tier limited allocated
 
