@@ -99,7 +99,7 @@ WebSite hosted on GCP - Google Cloud Platform:
 
   ![AWS CloudFormation](/screenshots/AWS-CloudFormation_resources.PNG "Using AWS CloudFormation script to implement as IaaC")
 
-- AWS Cloudformation can be enhanced by adding ALB, targetGroup, Auto-Scaling to establish AWS Web Infrastructure. Feel free to contact me: kuosheng.ang@outlook.com
+- AWS Cloudformation can be enhanced by adding ALB (Application Load Balancer) with the defined TargetGroup, Auto-Scaling to establish high availability Web Infrastructure. Feel free to contact me: kuosheng.ang@outlook.com
 
   - AWS Architecture to emulate On-Premise Infrastructure Network when using Site-to-Site VPN Connection (ie: Openswan Protocol which offers IPSec capability/features) 
 
