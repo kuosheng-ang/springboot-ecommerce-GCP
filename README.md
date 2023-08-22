@@ -107,7 +107,3 @@ WebSite hosted on GCP - Google Cloud Platform:
   ![AWS On-Premise infrastructure](/screenshots/AWS-Architecture-Diagram-Private-Cloud-On-Premise-Network.PNG "On-Premise Infrastructure network")
   
 
-if this link below is showing 404 error, my apologies is that my Google Cloud account has exceeded free tier limited allocated
-
-- https://8080-cs-656bed13-8b9b-4e14-a8da-28349f3ac58b.cs-asia-southeast1-ajrg.cloudshell.dev/?authuser=0&redirectedPreviously=true
-- https://8080-cs-656bed13-8b9b-4e14-a8da-28349f3ac58b.cs-asia-southeast1-ajrg.cloudshell.dev/
