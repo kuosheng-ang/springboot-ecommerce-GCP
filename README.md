@@ -104,7 +104,7 @@ WebSite hosted on GCP - Google Cloud Platform:
  
   - AWS Architecure for overall hybrid connectivty using Site-to-Site VPN Connection (Openswan Protocol which offers IPSec capability/features)
 
-    ![AWS hybrid infrastructure](/screenshots/AWS-Architecture-Diagram_Netflix_Web-Architecture-Web-Cloud.PNG "Overall hybrid On-Premise & Cloud Infrastructure network")
+  ![AWS hybrid infrastructure](/screenshots/AWS-Architecture-Diagram_Netflix_Web-Architecture-Web-Cloud.PNG "Overall hybrid On-Premise & Cloud Infrastructure network")
     
 
   - AWS Architecture to emulate On-Premise Infrastructure Network when using Site-to-Site VPN Connection (ie: Openswan Protocol which offers IPSec capability/features)
