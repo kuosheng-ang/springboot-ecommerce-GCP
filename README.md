@@ -101,8 +101,14 @@ WebSite hosted on GCP - Google Cloud Platform:
 
 - AWS Cloudformation can be enhanced by adding ALB (Application Load Balancer) with the defined TargetGroup, Auto-Scaling to establish high availability Web Infrastructure.
   - Feel free to contact me: kuosheng.ang@outlook.com
+ 
+  - AWS Architecure for overall hybrid connectivty using Site-to-Site VPN Connection (Openswan Protocol which offers IPSec capability/features)
 
-  - AWS Architecture to emulate On-Premise Infrastructure Network when using Site-to-Site VPN Connection (ie: Openswan Protocol which offers IPSec capability/features) 
+    ![AWS hybrid infrastructure](/screenshots/AWS-Architecture-Diagram_Netflix_Web-Architecture-Web-Cloud.PNG "Overall hybrid On-Premise & Cloud Infrastructure network")
+    
+
+  - AWS Architecture to emulate On-Premise Infrastructure Network when using Site-to-Site VPN Connection (ie: Openswan Protocol which offers IPSec capability/features)
+ 
 
   ![AWS On-Premise infrastructure](/screenshots/AWS-Architecture-Diagram-Private-Cloud-On-Premise-Network.PNG "On-Premise Infrastructure network")
   
