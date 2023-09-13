@@ -81,7 +81,9 @@ The predominant and most comprehensive way to protect against CSRF attacks is to
 When an HTTP request is submitted, the server must look up the expected CSRF token and compare it against the actual CSRF token in the HTTP request. If the values do not match, the HTTP request should be rejected.
 
 The key to this working is that the actual CSRF token should be in a part of the HTTP request that is not automatically included by the browser. For example, requiring the actual CSRF token in an HTTP parameter or an HTTP header will protect against CSRF attacks. Requiring the actual CSRF token in a cookie does not work because cookies are automatically included in the HTTP request by the browser.
-     - 
+
+     ### Synchronizer Token Form
+     
      <form method="post"
           	action="/transfer">
           <input type="hidden"
@@ -96,7 +98,8 @@ The key to this working is that the actual CSRF token should be in a part of the
           <input type="submit"
           	value="Transfer"/>
     </form>
-We can relax the expectations to require only the actual CSRF token for each HTTP request that updates the state of the application. For that to work, our application must ensure that safe HTTP methods are idempotent. This improves usability, since we want to allow linking to our website from external sites. Additionally, we do not want to include the random token in HTTP GET, as this can cause the tokens to be leaked.
+    
+ - We can relax the expectations to require only the actual CSRF token for each HTTP request that updates the state of the application. For that to work, our application must ensure that safe HTTP methods are idempotent. This improves usability, since we want to allow linking to our website from external sites. Additionally, we do not want to include the random token in HTTP GET, as this can cause the tokens to be leaked.
 
 Used Tools
 -----------
