@@ -59,15 +59,18 @@ Features
 ###  Web-Security implemented using Spring Security Configuration
 
  -  Protecting against CSRF attacks
-    @Bean
 
-       public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-           http
+
+            @Bean
+
+            public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+             http
     
-           .csrf().disable();
+            .csrf().disable();
     
-           return http.build();
-        }
+            return http.build();
+           }
   ![ Spring Security Configuration - Protecting against CSRF attacks](/screenshots/spring-security.PNG "Protecting against CSRF attacks")
     
 - Spring provides two mechanisms to protect against CSRF attacks:
