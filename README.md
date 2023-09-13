@@ -72,6 +72,8 @@ Features
             return http.build();
            }
   ![ Spring Security Configuration - Protecting against CSRF attacks](/screenshots/spring-security.PNG "Protecting against CSRF attacks")
+
+      -  Reference:  https://docs.spring.io/spring-security/reference/features/exploits/csrf.html
     
 - Spring provides two mechanisms to protect against CSRF attacks:
 
