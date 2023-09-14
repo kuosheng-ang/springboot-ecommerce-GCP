@@ -73,7 +73,7 @@ Features
            }
   ![ Spring Security Configuration - Protecting against CSRF attacks](/screenshots/spring-security.PNG "Protecting against CSRF attacks")
 -     On top of this, http security delete "JSESSIONID" cookie is configured in the security settings:   
-          .logoutSuccessHandler(logoutSuccessHandler()).deleteCookies("JSESSIONID")
+     .logoutSuccessHandler(logoutSuccessHandler()).deleteCookies("JSESSIONID")
       
         -  Reference:  https://docs.spring.io/spring-security/reference/features/exploits/csrf.html
     
