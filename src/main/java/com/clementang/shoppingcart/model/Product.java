@@ -17,7 +17,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 //@Builder
 @Entity
+@Data
 @Table(name = "products")
+@NoArgsConstructor
 @AllArgsConstructor
 public class Product {
     @Id
@@ -66,129 +68,5 @@ public class Product {
     private Collection<Order> orders = new ArrayList<>();
 
 
-
-    public Product() { }
-
-    public Product(String description, String inStockNumber, String productImage, int inStockQuantity) {
-
-        this.description = description;
-        this.inStockNumber = inStockNumber;
-        this.productImage = productImage;
-        this.inStockQuantity = inStockQuantity;
-    }
-
-
-    public Collection<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Collection<Order> orders) {
-        this.orders = orders;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return description;
-    }
-
-    public void setName(String name) {
-        this.description = name;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-    public String getInStockNumber() {
-        return inStockNumber;
-    }
-
-    public void setDescription(String desc) {
-        this.description = desc;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setCategoryId(UUID categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public UUID getCategoryId() {
-        return this.categoryId;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public void setInStockNumber(String stockNumber){
-
-        this.inStockNumber = stockNumber;
-    }
-
-    public int getInStockQuantity() {
-        return this.inStockQuantity;
-    }
-
-    public void setInStockQuantity(int AvailStockQuantity) {
-
-        this.inStockQuantity = AvailStockQuantity;
-    }
-
-    public String getProductImage() {
-        return productImage;
-    }
-    public void setProductImage(String image) {
-         productImage = image;
-    }
-
-    public void setNamedTitle(String title) {
-
-        this.namedTitle = title;
-    }
-
-    public String getNamedTitle() {
-
-        return this.namedTitle;
-    }
-
-    public String getSlug() {
-        return slug;
-    }
-
-    public void setSlug(String formattedSlug) {
-
-         this.slug=formattedSlug;
-    }
-
-    public void setCreationDate(LocalDateTime createdAtDate) {
-
-         this.createdAt =createdAtDate;
-    }
-
-
+    
 }
